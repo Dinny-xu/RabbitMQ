@@ -1,0 +1,18 @@
+  rabbitmq:
+    first:
+      host: 42.194.223.147
+      port: 5672
+      username: admin
+      password: admin
+        #消费端配置
+      listener:
+        simple:
+          concurrency: 10  #消费端
+          max-concurrency: 20 #最大消费端数
+          acknowledge-mode: auto #自动签收auto  手动 manual
+          prefetch: 1 #限流（海量数据，同时只能过来一条）
+    second:
+      host: 192.168.11.203
+      port: 5672
+      username: admin
+      password: admin

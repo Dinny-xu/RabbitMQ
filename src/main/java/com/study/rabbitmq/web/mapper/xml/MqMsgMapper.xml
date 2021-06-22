@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.mq.web.mapper.MqMsgMapper">
+  <resultMap id="BaseResultMap" type="com.study.mq.web.bean.entity.MqMsg">
+    <!--@mbg.generated-->
+    <!--@Table mq_msg-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="context" jdbcType="VARCHAR" property="context" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, context
+  </sql>
+
+</mapper>
