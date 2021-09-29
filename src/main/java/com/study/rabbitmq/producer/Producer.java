@@ -28,6 +28,11 @@ public class Producer {
         //获取信道
         final Channel channel = connection.createChannel();
 
+        //事务相关
+/*        channel.txSelect();
+        channel.txCommit();
+        channel.txRollback();*/
+
         //优先级队列测试 -> 添加参数:x-max-priority 设置优先级条数10
         HashMap<String, Object> params = MapUtil.newHashMap();
         params.put("x-max-priority", 10);

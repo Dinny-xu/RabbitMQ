@@ -54,13 +54,14 @@ public class Consumer01 {
             String message = new String(delivery.getBody());
             //拒接info5的消息
             if (message.equals("info5")) {
-                System.out.println("Consumer01接收到的消息:"+message+"此消息被拒绝");
+                System.out.println("Consumer01接收到的消息:" + message + "此消息被拒绝");
                 channel.basicReject(delivery.getEnvelope().getDeliveryTag(), false);
-            }else {
+            } else {
                 channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
             }
             System.out.println("Consumer01接收到消息:" + message);
         };
-        channel.basicConsume(NORMAL_QUEUE,false, deliverCallback, consumerTag ->{});
+        channel.basicConsume(NORMAL_QUEUE, false, deliverCallback, consumerTag -> {
+        });
     }
 }
